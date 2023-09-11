@@ -19,8 +19,9 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 
 # 1. Fitur API create account & tambah saldo & delete account & menampilkan saldo
 ## Langkah Penggunaan API
+## saran aja lebih enak pakai postman buat test API (gak wajib)
 ### 1. Buka post man klik new workspace pilih HTTP
-### 2. Masukan link http://localhost/kelompok4-banking-api/api.php
+### 2. Masukan link http://localhost/banking-api-kelompok4/api/account.php
 ### 3. Pilih Body dan x-www-form-urlencoded
 ### 4.  masukan key dan value
 
@@ -33,4 +34,5 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ### |  Key = action         |   Value = delete            |
 
 ## Untuk menampilkan saldo pakai GET Method di params
+### http://localhost/banking-api-kelompok4/api/balance.php
 ### |  Key = akun_id |   Value = "nomor akun"      |       
