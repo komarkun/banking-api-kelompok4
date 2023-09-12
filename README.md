@@ -25,11 +25,11 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ### 3. Pilih Body dan x-www-form-urlencoded
 ### 4.  masukan key dan value
 
-## Untuk Create User & tambah saldo awal pakai POST Method di x-www-form-urlencoded
+## Untuk Create User & tambah saldo awal pakai POST Method di body lalu centang x-www-form-urlencoded
 ### |  Key = akun_id |   Value = "nomor akun"      | 
 ### |  Key = saldo         |   Value = "integer bebas"   | 
 
-## Untuk delete user pakai POST Methot di x-www-form-urlencoded
+## Untuk delete user pakai POST Methot di body lalu centang x-www-form-urlencoded
 ### |  Key = akun_id |   Value = "nomor akun"      | 
 ### |  Key = action         |   Value = delete            |
 
