@@ -1,7 +1,7 @@
 # USER GUIDE
 ### Clone repository ke local
 ### Buat database di web server (XAMPP)
-### nama database = kelompok4_banking_api_db
+### nama database = db_banking_api_kelompok4
 ### user = root
 ### pass = ""     (kosongkan aja)
 ### klik database
