@@ -36,3 +36,16 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ## Untuk menampilkan saldo pakai GET Method di params
 ### http://localhost/banking-api-kelompok4/api/balance.php
 ### |  Key = akun_id |   Value = "nomor akun"      |       
+
+# 2. Fitur API transfer dari satu akun ke akun lainnya
+## Langkah Penggunaan API
+## saran aja lebih enak pakai postman buat test API (gak wajib)
+### 1. Buka post man klik new workspace pilih HTTP
+### 2. Masukan link http://localhost/banking-api-kelompok4-main/api/transfer.php 
+### 3. Pilih Body dan x-www-form-urlencoded
+### 4.  masukan key dan value
+
+## Untuk transfer dari satu akun ke akun lainnya pakai POST Method di body lalu centang x-www-form-urlencoded
+### |  Key = sender_id |   Value = "dari akun siapa"      | 
+### |  Key = receiver_id   |   Value = "ke akun siapa"   | 
+### |  Key = saldo   |   Value = "jumlah saldo yang akan ditransfer"   | 
