@@ -1,0 +1,17 @@
+
+CREATE TABLE accounts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    akun_id VARCHAR(20) NOT NULL,
+    fullname VARCHAR(20) NOT NULL,
+    balance DECIMAL(10, 2) DEFAULT 0.0
+);
+
+CREATE TABLE transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id VARCHAR(20) NOT NULL, 
+    receiver_id VARCHAR(20) NOT NULL, 
+    saldo DECIMAL(10, 2) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES accounts(akun_id), -- Adjusted the foreign keys accordingly
+    FOREIGN KEY (receiver_id) REFERENCES accounts(akun_id)
+);
