@@ -9,6 +9,5 @@ $conn = new mysqli($hostname, $username, $password, $database);
 
 if ($conn->connect_error) {
     die("Gagal Koneksi ke database: " . $conn->connect_error);
-} else {
-    echo "Database Success";
-}
+} 
+?>
