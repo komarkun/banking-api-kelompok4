@@ -7,9 +7,9 @@ CREATE TABLE accounts (
 
 CREATE TABLE transactions (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    sender_id VARCHAR(20) NOT NULL, 
-    receiver_id VARCHAR(20) NOT NULL, 
-    saldo DECIMAL(10, 2) NOT NULL,
+    from_akun_id VARCHAR(20) NOT NULL, 
+    to_akun_id VARCHAR(20) NOT NULL, 
+    amount DECIMAL(10, 2) NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (sender_id) REFERENCES accounts(akun_id), -- Adjusted the foreign keys accordingly
     FOREIGN KEY (receiver_id) REFERENCES accounts(akun_id)
