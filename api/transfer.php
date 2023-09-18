@@ -56,6 +56,13 @@ function transferMoney($from_akun_id, $to_akun_id, $amount)
     if ($update_from_data->execute() && $update_to_data->execute()) {
         // Commit transaksi jika berhasil
         $conn->commit();
+
+        // Simpan data transfer ke dalam tabel transactions
+        $insert_transaction_sql = "INSERT INTO transactions (from_akun_id, to_akun_id, amount) VALUES (?, ?, ?)";
+        $insert_transaction_data = $conn->prepare($insert_transaction_sql);
+        $insert_transaction_data->bind_param("ssd", $from_akun_id, $to_akun_id, $amount);
+        $insert_transaction_data->execute();
+        
         echo json_encode(['message' => 'Money transferred successfully']);
     } else {
         // Rollback transaksi jika gagal
