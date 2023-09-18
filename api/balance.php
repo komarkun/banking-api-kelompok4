@@ -16,7 +16,7 @@ function displayBalance($akun_id)
         $row = $result->fetch_assoc();
         echo json_encode(['Saldo Anda' => $row['balance']]);
     } else {
-        echo json_encode(['error' => 'Account not found']);
+        echo json_encode(['error' => 'Akun tidak ditemukan']);
     }
 
     $data->close();

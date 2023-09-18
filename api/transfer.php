@@ -1,12 +1,12 @@
 <?php
 require_once 'config.php';
 
-// Function to transfer money from one account to another
+// Function tranfer uang dari satu akun ke akun lain
 function transferMoney($sender_id, $receiver_id, $saldo)
 {
     global $conn;
 
-    // Check if sender account exists in the database
+    // Check jika pengirim akun terdaftar
     $check_sql = "SELECT balance FROM accounts WHERE akun_id = ?";
     $check_data = $conn->prepare($check_sql);
     $check_data->bind_param("s", $sender_id);
@@ -14,11 +14,11 @@ function transferMoney($sender_id, $receiver_id, $saldo)
     $check_result = $check_data->get_result();
 
     if ($check_result->num_rows == 0) {
-        echo json_encode(['error' => 'Sender account not found']);
+        echo json_encode(['error' => 'Pengirim tidak ditemuka']);
         return;
     }
 
-    // Check if receiver account exists in the database
+    // Check jika penerima akun terdaftar
     $to_sql = "SELECT balance FROM accounts WHERE akun_id = ?";
     $to_data = $conn->prepare($to_sql);
     $to_data->bind_param("s", $receiver_id);
@@ -26,17 +26,17 @@ function transferMoney($sender_id, $receiver_id, $saldo)
     $to_result = $to_data->get_result();
 
     if ($to_result->num_rows == 0) {
-        echo json_encode(['error' => 'Recipient account not found']);
+        echo json_encode(['error' => 'Penerima tidak ditemukan']);
         return;
     }
 
-    // Get sender's balance
+    // 
     $check_row = $check_result->fetch_assoc();
     $check_balance = $check_row['balance'];
 
     // Check if the sender has enough balance to transfer
     if ($check_balance < $saldo) {
-        echo json_encode(['error' => 'Insufficient balance']);
+        echo json_encode(['error' => 'Saldo anda kurang untuk transfer']);
         return;
     }
 
@@ -56,25 +56,25 @@ function transferMoney($sender_id, $receiver_id, $saldo)
     if ($update_check_data->execute() && $update_to_data->execute()) {
         // Commit the transaction if successful
         $conn->commit();
-        echo json_encode(['message' => 'Money transferred successfully']);
+        echo json_encode(['message' => 'Uang berhasil ditransfer']);
     } else {
         // Rollback the transaction if it fails
         $conn->rollback();
-        echo json_encode(['error' => 'Failed to transfer money']);
+        echo json_encode(['error' => 'Gagal tranfer uang']);
     }
-    // Log the transaction
+    // Log untuk menyimpan transaksi
     $log_sql = "INSERT INTO transactions (sender_id, receiver_id, saldo) VALUES (?, ?, ?)";
     $log_data = $conn->prepare($log_sql);
     $log_data->bind_param("ssd", $sender_id, $receiver_id, $saldo);
 
     if ($log_data->execute()) {
-        // Commit the transaction if successful
+        // jika transaksi succes
         $conn->commit();
-        echo json_encode(['message' => 'Money transferred successfully']);
+        echo json_encode(['message' => 'Riwayat tercatat']);
     } else {
-        // Rollback the transaction if it fails
+        // jika transaksi gagal
         $conn->rollback();
-        echo json_encode(['error' => 'Failed to transfer money']);
+        echo json_encode(['error' => 'Riwayat gagal']);
     }
 
     $update_check_data->close();
@@ -82,7 +82,7 @@ function transferMoney($sender_id, $receiver_id, $saldo)
     $log_data->close();
 }
 
-// Handle money transfer request
+// if login untuk mengirim data
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sender_id'], $_POST['receiver_id'], $_POST['saldo'])) {
     $sender_id = $_POST['sender_id'];
     $receiver_id = $_POST['receiver_id'];
