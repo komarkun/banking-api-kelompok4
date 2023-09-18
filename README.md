@@ -51,3 +51,16 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ### |  Key = to_akun_id   |   Value = "ke akun siapa"   | 
 ### |  Key = amount   |   Value = "jumlah saldo yang akan ditransfer"   | 
 
+# 3. Fitur API untuk mengembalikan daftar transaksi terakhir untuk akun tertentu
+## Langkah Penggunaan API
+## saran aja lebih enak pakai postman buat test API (gak wajib)
+### 1. Buka post man klik new workspace pilih HTTP
+### 2. Masukan link http://localhost/banking-api-kelompok4-main/api/get_recent_transactions.php
+### 3. Pilih Params
+### 4.  masukan key dan value
+
+## Untuk transfer dari satu akun ke akun lainnya pakai POST Method di body lalu centang x-www-form-urlencoded
+### |  Key = akun_id |   Value = "akun yang ingin dilihat daftar transaksinya"      | 
+
+
+
