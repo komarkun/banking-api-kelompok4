@@ -49,3 +49,7 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ### |  Key = sender_id |   Value = "dari akun siapa"      | 
 ### |  Key = receiver_id   |   Value = "ke akun siapa"   | 
 ### |  Key = saldo   |   Value = "jumlah saldo yang akan ditransfer"   | 
+
+## Untuk cek riwayat transaction menggunakan method GET di param 
+### Masukan link http://localhost/banking-api-kelompok4-main/api/transaction.php 
+### | Key = akun_id | Value = "akun yg ingin di cek riwayat transaksinya"
