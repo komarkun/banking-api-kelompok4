@@ -50,6 +50,7 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ### |  Key = receiver_id   |   Value = "ke akun siapa"   | 
 ### |  Key = saldo   |   Value = "jumlah saldo yang akan ditransfer"   | 
 
+# 3. Fitur API untuk melihat riwayat transaksi akun setelah trasfer
 ## Untuk cek riwayat transaction menggunakan method GET di param 
 ### Masukan link http://localhost/banking-api-kelompok4-main/api/transaction.php 
 ### | Key = akun_id | Value = "akun yg ingin di cek riwayat transaksinya"
