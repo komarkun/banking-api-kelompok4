@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "e42edcd6-bafe-45d9-8e90-ac01f13201b9",
+		"name": "homework4 k4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29771821"
+	},
+	"item": [
+		{
+			"name": "tampil saldo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "akun_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "saldo",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/rakamin/balance.php?akun_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rakamin",
+						"balance.php"
+					],
+					"query": [
+						{
+							"key": "akun_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create akun dan menabung",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "akun_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "saldo",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/rakamin/account.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rakamin",
+						"account.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "sender_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reciver_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "saldo",
+							"value": "20000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/rakamin/transfer.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rakamin",
+						"transfer.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Riwayat transaksi",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "sender_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "reciver_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "saldo",
+							"value": "20000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/rakamin/transaction.php?akun_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rakamin",
+						"transaction.php"
+					],
+					"query": [
+						{
+							"key": "akun_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
