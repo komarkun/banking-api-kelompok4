@@ -1,6 +1,7 @@
 CREATE TABLE accounts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     akun_id VARCHAR(20) NOT NULL UNIQUE,
+    fullname VARCHAR(50) NOT NULL,
     balance DECIMAL(10, 2) DEFAULT 0.0
 );
 

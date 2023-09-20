@@ -24,9 +24,9 @@ function createAccount($akun_id)
     $insert_data->bind_param("s", $akun_id);
 
     if ($insert_data->execute()) {
-        echo json_encode(['message' => 'Account created successfully']);
+        echo json_encode(['message' => 'Akun berhasil dibuat']);
     } else {
-        echo json_encode(['error' => 'Failed to create account']);
+        echo json_encode(['error' => 'Gagal membuat akun']);
     }
 
     $insert_data->close();
@@ -45,7 +45,7 @@ function deleteAccount($akun_id)
     $check_result = $check_data->get_result();
 
     if ($check_result->num_rows === 0) {
-        echo json_encode(['error' => 'Account not found']);
+        echo json_encode(['error' => 'Akun tidak ditemukan']);
         return;
     }
 
@@ -55,9 +55,9 @@ function deleteAccount($akun_id)
     $delete_data->bind_param("s", $akun_id);
 
     if ($delete_data->execute()) {
-        echo json_encode(['message' => 'Account deleted successfully']);
+        echo json_encode(['message' => 'Akun berhasil di delete']);
     } else {
-        echo json_encode(['error' => 'Failed to delete account']);
+        echo json_encode(['error' => 'Gagal delete akun']);
     }
 
     $delete_data->close();
@@ -88,15 +88,15 @@ function addBalance($akun_id, $saldo)
     $check_result = $check_data->get_result();
 
     if ($check_result->num_rows == 0) {
-        echo json_encode(['error' => 'Account not found']);
+        echo json_encode(['error' => 'Akun tidak ditemukan']);
         return;
     }
 
     // Update saldo untuk menabung dan membuat saldo awal
     if (updateAccountBalance($akun_id, $saldo)) {
-        echo json_encode(['message' => 'Money saved successfully']);
+        echo json_encode(['message' => 'Uang berhasil disimpan']);
     } else {
-        echo json_encode(['error' => 'Failed to save money']);
+        echo json_encode(['error' => 'Gagal menyimpan uang']);
     }
 }
 

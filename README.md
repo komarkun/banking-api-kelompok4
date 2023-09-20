@@ -46,6 +46,17 @@ https://www.rakamin.com/dashboard/homework-exam/58119
 ### 4.  masukan key dan value
 
 ## Untuk transfer dari satu akun ke akun lainnya pakai POST Method di body lalu centang x-www-form-urlencoded
+<<<<<<< HEAD
 ### |  Key = from_akun_id |   Value = "dari akun siapa"      | 
 ### |  Key = to_akun_id   |   Value = "ke akun siapa"   | 
 ### |  Key = amount   |   Value = "jumlah saldo yang akan ditransfer"   | 
+=======
+### |  Key = sender_id |   Value = "dari akun siapa"      | 
+### |  Key = receiver_id   |   Value = "ke akun siapa"   | 
+### |  Key = saldo   |   Value = "jumlah saldo yang akan ditransfer"   | 
+
+# 3. Fitur API untuk melihat riwayat transaksi akun setelah trasfer
+## Untuk cek riwayat transaction menggunakan method GET di param 
+### Masukan link http://localhost/banking-api-kelompok4-main/api/transaction.php 
+### | Key = akun_id | Value = "akun yg ingin di cek riwayat transaksinya"
+>>>>>>> 7978844b5e5fb0eb8b2f8177c901e6ee13aa514e
